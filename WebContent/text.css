@@ -2,11 +2,19 @@
 
 body{
 	height:100%;
+	width:100%;
 	display: flex;
+}
+
+.index-body{
 	align-items: center;
 	padding-top:6rem;
 	padding-bottom:6rem;
 /* 	background-color:#f5f5f5; */
+}
+
+.welcome-body{
+	padding-top: 1rem;
 }
 
 .form-in{
@@ -54,4 +62,71 @@ button{
 	margin:0.5rem;
 	height:2rem;
 	width: 5rem;
+	cursor: pointer;
+}
+
+.page-content{
+	width:100%;
+	position:relative;
+/* 	border:1px solid black; */
+}
+
+.welcome-header{
+	min-height: 3rem;
+	width:100%;
+/* 	border: 1px solid black; */
+}
+
+.header-menu{
+	display: inline-block;
+	width:49%;
+	border:0;
+}
+
+.header-menu a{
+	padding-left:1rem;
+	text-decoration:none;
+}
+
+.header-welcome-content{
+	display: inline-block;
+	width:50%;
+	border:0;
+	text-align:right;
+}
+
+.header-welcome-content span{
+	padding-right:1rem;
+}
+
+.search{
+	width:100%;
+/* 	border: 1px solid black; */
+	text-align:center;
+	margin-top: 7rem;
+}
+
+.search-input{
+	width:30%;
+	height:2.1rem;
+	border-radius: 0.5rem;
+	font-size:18px;
+	border: 1px solid #777;
+}
+.search-input:focus{
+	outline:none;
+}
+
+.search-btn{
+	margin-top:2rem;
+	height:2rem;
+	width: 6rem;
+	border:0;
+	border-radius:0.5rem;
+	font-size:16px;
+	cursor: pointer;
+}
+
+.search-btn:hover{
+	border:1px solid #777;
 }

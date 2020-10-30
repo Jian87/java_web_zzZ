@@ -7,7 +7,7 @@
 <title>java_web_zzZ</title>
 <link href="text.css" rel="stylesheet">
 </head>
-<body>
+<body class="index-body">
 	<form class="form-in">
 		<div style="text-align: center">
 	  		<h1>This is our Demo</h1>
