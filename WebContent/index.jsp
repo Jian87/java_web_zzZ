@@ -8,18 +8,18 @@
 <link href="text.css" rel="stylesheet">
 </head>
 <body class="index-body">
-	<form class="form-in">
+	<form class="form-in" action="Login" method="post">
 		<div style="text-align: center">
 	  		<h1>This is our Demo</h1>
-	  		<p>Age less than 18 is not allowed!</a></p>
+	  		<p>Age less than 18 is not allowed!</p>
 		</div>
 
 		<div class="form-input-group">
-		    <input type="email" id="inputEmail" placeholder="Email address" required autofocus>
+		    <input type="email" id="inputEmail" name="email" placeholder="Email address" required autofocus>
 		</div>
 
   		<div class="form-input-group">
-    		<input type="password" id="inputPassword"  placeholder="Password" required>
+    		<input type="password" id="inputPassword" name="pass" placeholder="Password" required>
   		</div>
 
   		<div class="form-checkbox">
