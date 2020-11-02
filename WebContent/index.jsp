@@ -24,7 +24,7 @@
 
   		<div class="form-checkbox">
     		<label>
-      		<input type="checkbox" value="remember-me"> Remember me
+      			<input type="checkbox" name="cook" value="remember-me"> Remember me
     		</label>
   		</div>
   		<br/>
