@@ -29,8 +29,8 @@
   		</div>
   		<br/>
   		<div class="btn">
-  			<button type="submit">Log in</button>
-  			<button type="submit">Sign in</button>
+  			<input class="log-btn" type="submit" value="Log in">
+  			<input class="sign-btn" type="submit" value="Sign in">
   		</div>
   		<p style="text-align:center">&copy; 2020-2022</p>
 	</form>
