@@ -46,6 +46,6 @@ public class Video {
 	}
 	
 	public String toString() {
-		return this.cname + " " + this.ename + " " + this.title + " " + this.link;
+		return this.cname + "," + this.ename + "," + this.title + "," + this.link;
 	}
 }

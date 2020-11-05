@@ -22,7 +22,13 @@ import com.video.Video;
 public class Search extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String content = request.getParameter("search");
+		HttpSession session = request.getSession();
+		String content = "";
+		if(session.getAttribute("search-content") != null && request.getParameter("search").isEmpty()) {
+			content = String.valueOf(session.getAttribute("search-content"));
+		} else {
+			content = request.getParameter("search");
+		}
 		
 		SearchDao sd = new SearchDao();
 		
@@ -34,11 +40,11 @@ public class Search extends HttpServlet {
 			searchResult += v.toString() + "#";
 		}
 		
-		HttpSession session = request.getSession();
 		
+		session.setAttribute("search-content", content);
 		session.setAttribute("search-result", searchResult);
 
 		
-		response.sendRedirect("welcome.jsp");
+		response.sendRedirect("display.jsp");
 	}
 }

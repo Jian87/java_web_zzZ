@@ -7,6 +7,7 @@
 <meta charset="ISO-8859-1">
 <title>java_web_zzZ</title>
 <link href="text.css" rel="stylesheet">
+
 </head>
 <body class="welcome-body">
 	<%
@@ -34,30 +35,6 @@
 				<div><input class="search-btn" type="submit" value="Search"></div>
 			</form>
 		</div>
-		
-		<div class="search-res">
-			The Search Result will display here!<br>
-			<%
-				String searchResult = String.valueOf(session.getAttribute("search-result"));
-				System.out.println(searchResult);
-				
-				if(searchResult.isEmpty()) {
-					out.println("There is no result !");
-				} else if(searchResult.equals("null")) {
-					
-				} else {
-					String[] videos = searchResult.split("#");
-					
-					for(String v: videos) {
-						out.println(v + "<br/>");
-					}
-				}
-				
-				session.removeAttribute("search-result");
-				
-			%>
-		</div>
-	
 	</div>
 </body>
 </html>

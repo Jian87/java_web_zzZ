@@ -4,6 +4,7 @@ body{
 	height:100%;
 	width:100%;
 	display: flex;
+	border-collapse: collapse;
 }
 
 .index-body{
@@ -147,3 +148,41 @@ body{
 .search-btn:hover{
 	border:1px solid #777;
 }
+
+.display-header {
+	margin-top:1rem;
+	min-height:1rem;
+}
+
+.display-search{
+	margin-top:2rem;
+	margin-left:2rem;
+	height:2rem;
+	text-align:left;
+}
+
+.display-search input{
+	padding: 0;
+	margin:0;
+	display: inline-block;
+}
+
+.display-search .search-btn{
+	height:2.3rem;
+}
+
+.search-res {
+	margin-top:5rem;
+	margin-left:2rem;
+	margin-right:2rem;
+}
+
+.search-res ul{
+	border-top:1px solid black;
+}
+
+.search-res ul li{
+	padding:0.3rem;
+}
+
+

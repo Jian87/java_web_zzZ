@@ -1,0 +1,68 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>java web zzZ</title>
+<link href="text.css" rel="stylesheet">
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+<!-- <script src="project.js"></script> -->
+</head>
+<body>
+	<%
+		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+		response.setHeader("Pragma", "no-cache");
+		response.setHeader("Expires", "0");
+		
+		if(session.getAttribute("username") == null) {
+			response.sendRedirect("index.jsp");
+		}
+	%>
+
+	<div class="page-content">
+		<div class="welcome-header display-header">
+			<div class="header-menu"><a href="#">About</a></div>
+			<div class="header-welcome-content">
+				<span>Welcome ${username}</span>
+				<form action="Logout"><input type="submit" value="Log out"></form>
+			</div>	
+		</div>
+		<br>
+		<div class="search display-search">
+			<form action="Search">
+				<input class="search-input"type="text" id="search" name="search" placeholder="Search...">
+				<input class="search-btn" type="submit" value="Search">
+			</form>
+		</div>
+		
+		<div class="search-res">
+			The Search Result will display here!<br>
+			<ul>
+				<%
+					String searchResult = String.valueOf(session.getAttribute("search-result"));
+					
+					if(searchResult.isEmpty()) {
+						out.println("There is no result !");
+					} else if(searchResult.equals("null")) {
+						
+					} else {
+						String[] videos = searchResult.split("#");
+						
+						for(String v: videos) {
+							String[] items = v.split(",");
+ 							out.println("<li><span class='name'>E-Name: </span><span>" + items[0] + "</span><span class='name'> C-Name: </span><span>" + items[1] + "</span><br>" +
+ 							"<span class='name'>Title: </span><span>" + items[2] + "</span><br><span><a href='"+ items[3] +"'>this is the youtube link</a></span></li>");
+						}
+					}
+					
+					session.removeAttribute("search-result");
+					
+				%>
+			</ul>
+			
+		</div>
+	
+	</div>
+</body>
+</html>
