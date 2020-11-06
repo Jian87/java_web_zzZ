@@ -185,4 +185,11 @@ body{
 	padding:0.3rem;
 }
 
+.sign-in-btn {
+	width: 8rem;
+}
 
+.sign-in-btn:hover{
+	color:white;
+	background-color:black;
+}

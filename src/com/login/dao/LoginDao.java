@@ -23,10 +23,15 @@ public class LoginDao {
 			st.setString(2, pass);
 			
 			ResultSet rs = st.executeQuery();
+			boolean res = false;
 			
 			if(rs.next()) {
-				return true;
+				res = true;
 			}
+			
+			conn.close();
+			
+			return res;
 			
 		} catch(Exception e) {
 			e.printStackTrace();

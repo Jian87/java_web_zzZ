@@ -31,7 +31,7 @@
   		<br/>
   		<div class="btn">
   			<input class="log-btn" type="submit" value="Log in">
-  			<input class="sign-btn" type="submit" value="Sign in">
+  			<input class="sign-btn" type="submit" value="Sign in" onclick="location.href='signin.jsp';">
   		</div>
   		<p style="text-align:center">&copy; 2020-2022</p>
 	</form>
