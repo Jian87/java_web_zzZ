@@ -1,13 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" %>
+    
+<%@ page import="java.util.*, com.search.dao.SearchDao,com.video.Video" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>java web zzZ</title>
 <link href="text.css" rel="stylesheet">
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
-<!-- <script src="project.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="project.js"></script>
 </head>
 <body>
 	<%
@@ -31,7 +33,14 @@
 		<br>
 		<div class="search display-search">
 			<form action="Search">
-				<input class="search-input"type="text" id="search" name="search" placeholder="Search...">
+				<input class="search-input"type="text" id="search" name="search" placeholder="Search..." <% 
+					String str = String.valueOf(session.getAttribute("search-content"));
+					if(str.isEmpty()) {
+						out.println("");
+					} else {
+						out.println("value='" + str + "'");
+					}
+				%>>
 				<input class="search-btn" type="submit" value="Search">
 			</form>
 		</div>
@@ -40,24 +49,21 @@
 			The Search Result will display here!<br>
 			<ul>
 				<%
-					String searchResult = String.valueOf(session.getAttribute("search-result"));
-					
-					if(searchResult.isEmpty()) {
-						out.println("There is no result !");
-					} else if(searchResult.equals("null")) {
-						
+					String sc = String.valueOf(request.getParameter("search"));
+					System.out.println(sc);
+					if(sc.isEmpty() || sc.equals("null")) {
+						response.sendRedirect("welcome.jsp");
 					} else {
-						String[] videos = searchResult.split("#");
 						
-						for(String v: videos) {
-							String[] items = v.split(",");
- 							out.println("<li><span class='name'>E-Name: </span><span>" + items[0] + "</span><span class='name'> C-Name: </span><span>" + items[1] + "</span><br>" +
- 							"<span class='name'>Title: </span><span>" + items[2] + "</span><br><span><a href='"+ items[3] +"'>this is the youtube link</a></span></li>");
+						SearchDao sd = new SearchDao();
+						
+						List<Video> videos = sd.search(sc);
+						
+						for(Video v: videos) {
+							out.println("<li><span class='name'>E-Name: </span><span>" + v.getEname() + "</span><span class='name'> C-Name: </span><span>" + v.getCname() + "</span><br>" +
+	  							"<span class='name'>Title: </span><span>" + v.getTitle() + "</span><br><span><a href='"+ v.getLink() +"'>this is the youtube link</a></span></li>");
 						}
 					}
-					
-					session.removeAttribute("search-result");
-					
 				%>
 			</ul>
 			

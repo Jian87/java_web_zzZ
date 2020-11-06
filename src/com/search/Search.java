@@ -29,22 +29,12 @@ public class Search extends HttpServlet {
 		} else {
 			content = request.getParameter("search");
 		}
-		
-		SearchDao sd = new SearchDao();
-		
-		List<Video> res = sd.search(content);
-		
-		String searchResult = "";
-		
-		for(Video v: res) {
-			searchResult += v.toString() + "#";
-		}
-		
-		
+				
 		session.setAttribute("search-content", content);
-		session.setAttribute("search-result", searchResult);
-
+		request.setAttribute("search", content);
 		
-		response.sendRedirect("display.jsp");
+		if(!content.isEmpty()) {
+			response.sendRedirect("display.jsp?search=" + content);
+		}
 	}
 }

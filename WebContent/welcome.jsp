@@ -7,7 +7,7 @@
 <meta charset="ISO-8859-1">
 <title>java_web_zzZ</title>
 <link href="text.css" rel="stylesheet">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body class="welcome-body">
 	<%
