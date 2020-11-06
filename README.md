@@ -1,7 +1,7 @@
 
 
 ## zzZ
-This repository is a self practice project for java web development based on spring framework.
+This repository is a self practice project for java web development.
 
 ## Dependence
 
