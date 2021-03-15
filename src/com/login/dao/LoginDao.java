@@ -7,8 +7,8 @@ import java.sql.ResultSet;
 
 public class LoginDao {
 	String url = "jdbc:mysql://localhost:3306/demo";
-	String username="jian";
-	String password="jian1987";
+	String username="";
+	String password="";
 	String query = "select * from login where uname= ? and pass = ?";
 	
 	public boolean check(String name, String pass) {
