@@ -7,8 +7,8 @@ import java.sql.SQLException;
 
 public class SinginDao {
 	String url="jdbc:mysql://localhost:3306/demo";
-	String username ="jian";
-	String password ="jian1987";
+	String username ="";
+	String password ="";
 	
 	String statement = "insert into login(uname, pass)" +  " values(?, ?)";
 	
