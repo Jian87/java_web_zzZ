@@ -11,8 +11,8 @@ import com.video.Video;
 
 public class SearchDao {
 	String url = "jdbc:mysql://localhost:3306/demo";
-	String username = "jian";
-	String password = "jian1987";
+	String username = "";
+	String password = "";
 	String query = "select * from videos";
 	
 	public List<Video> search(String content) {
